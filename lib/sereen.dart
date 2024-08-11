@@ -61,9 +61,9 @@ class store extends State<Screen> {
               Row(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(right: 10),
+                    margin: const EdgeInsets.only(right: 10),
                     width: 270,
-                    height: 385,
+                    height: 400,
                     decoration: const BoxDecoration(
                       borderRadius: BorderRadius.only(
                         topRight: Radius.circular(15),
@@ -74,14 +74,14 @@ class store extends State<Screen> {
                     child: PageView(
                       children: [
                         Image.asset(
-                          "assets/images/bg.png",
+                          "assets/images/T-shirt.png",
                         ),
-                        Image.asset("assets/images/images.png"),
-                        Image.asset("assets/images/images1.png"),
+                        Image.asset("assets/images/shirt.png"),
+                        Image.asset("assets/images/back's t-shirt.png"),
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 30,
                   ),
                   Column(
@@ -90,7 +90,7 @@ class store extends State<Screen> {
                         padding: const EdgeInsets.only(bottom: 15),
                         child: MaterialButton(
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10)),
+                              borderRadius: BorderRadius.circular(8)),
                           onPressed: () {
                             setState(() {
                               selectedSizeIndex = index;
@@ -126,7 +126,7 @@ class store extends State<Screen> {
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(left: 15, top: 5),
+                padding: const EdgeInsets.only(left: 15, top: 5),
                 child: Text(
                   "20/21 Away by Adidas",
                   style: TextStyle(color: Colors.grey.shade400, fontSize: 18),
@@ -157,7 +157,7 @@ class store extends State<Screen> {
                     ),
                     Text(
                       '$currentvalue',
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.white,
                         fontSize: 20,
                       ),
@@ -169,16 +169,16 @@ class store extends State<Screen> {
                       child: Container(
                         decoration: BoxDecoration(
                             color: Colors.grey.shade600,
-                            borderRadius: BorderRadius.circular(10)),
+                            borderRadius: BorderRadius.circular(5)),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             MaterialButton(
                                 color: Colors.red,
-                                height: 8,
-                                minWidth: 8,
+                                height: 5,
+                                minWidth: 5,
                                 shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10)),
+                                    borderRadius: BorderRadius.circular(5)),
                                 onPressed: () {
                                   setState(() {
                                     if (piece > 0) piece--;
@@ -196,10 +196,10 @@ class store extends State<Screen> {
                                   fontWeight: FontWeight.bold),
                             ),
                             MaterialButton(
-                                height: 8,
-                                minWidth: 8,
+                                height: 5,
+                                minWidth: 5,
                                 shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(8)),
+                                    borderRadius: BorderRadius.circular(5)),
                                 color: Colors.red,
                                 onPressed: () {
                                   setState(() {
@@ -217,7 +217,7 @@ class store extends State<Screen> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Row(
@@ -227,14 +227,14 @@ class store extends State<Screen> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Details',
+                        const Text('Details',
                             style: TextStyle(color: Colors.grey, fontSize: 20)),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         Row(
                           children: [
-                            Text('Material:',
+                            const Text('Material:',
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 17)),
                             Text('Polyester',
@@ -244,7 +244,7 @@ class store extends State<Screen> {
                         ),
                         Row(
                           children: [
-                            Text('Shipping:',
+                            const Text('Shipping:',
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 17)),
                             Text('In 5 to 6 Days',
@@ -254,7 +254,7 @@ class store extends State<Screen> {
                         ),
                         Row(
                           children: [
-                            Text('Returns:',
+                            const Text('Returns:',
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 17)),
                             Text('Within 20 Days',
@@ -265,31 +265,34 @@ class store extends State<Screen> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 70,
                   ),
                   Container(
-                    height: 90,
+                    height: 120,
                     width: 80,
                     decoration: BoxDecoration(
                         color: Colors.red,
-                        borderRadius: BorderRadius.circular(10)),
+                        borderRadius: BorderRadius.circular(8)),
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.shopping_bag_outlined,
                           color: Colors.white,
                           size: 30,
                         ),
-                        Spacer(),
+                        const SizedBox(
+                          height: 20,
+                        ),
                         Text(
                           "\$" + price().toString(),
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Colors.white,
                               fontSize: 20,
                               fontWeight: FontWeight.bold),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         )
                       ],
